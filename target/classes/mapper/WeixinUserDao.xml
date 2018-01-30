@@ -1,0 +1,13 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <mapper namespace="dao.WeixinUserDao">
+    	 <select id="findByOpenid" parameterType="String" resultType="entity.WeixinUser">
+    		select nickName from weixinuser where openid = #{openid}
+    	</select>
+    	
+    	<update id="updateUser">
+    		update weixinuser set openid = #{openid} where userName = #{userName} and passward=#{passward}
+    	</update>
+    </mapper>
